@@ -14,20 +14,27 @@ namespace OOP.lesson_2
 
         public void Run()
         {
-            BankAccaunt accaunt = new BankAccaunt(1500m, TypeOfBankAccaunt.Credit);
+            BankAccaunt accaunt = new();
+            accaunt.GetAccauntBalance = 1000m;
+            accaunt.GetTypeOfAccaunt = TypeOfBankAccaunt.Credit;
             accaunt.Info();
+
             Console.WriteLine(new string('-', 50));
 
-            BankAccaunt accaunt1 = new BankAccaunt(TypeOfBankAccaunt.Budget);
-            accaunt1.Info();
-            Console.WriteLine(new string('-', 50));
-
-            BankAccaunt accaunt2 = new BankAccaunt(1200m);
+            BankAccaunt accaunt2 = new();
+            accaunt2.GetAccauntBalance = 9000m;
+            accaunt2.GetTypeOfAccaunt = TypeOfBankAccaunt.Deposit;
             accaunt2.Info();
 
             Console.WriteLine(new string('-', 50));
 
-           
+            BankAccaunt accaunt3 = new();
+            accaunt3.GetAccauntBalance = 1500m;
+            accaunt3.GetTypeOfAccaunt = TypeOfBankAccaunt.Budget;
+            accaunt3.Info();
+
+            Console.WriteLine(new string('-', 50));
+
         }
     }
 }

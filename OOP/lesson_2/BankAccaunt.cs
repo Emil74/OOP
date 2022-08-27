@@ -14,38 +14,56 @@ namespace OOP.lesson_2
         decimal Balance;
         TypeOfBankAccaunt _typeAcaunt;
 
-        public void Number()
+        public BankAccaunt()
         {
             accaunt_Number++;
         }
 
-
-        public BankAccaunt(decimal _balance)
+        public int GetAccuntNumber
         {
-            Balance = _balance;
-            Number();
+            get
+            {
+                return accaunt_Number;
+            }
         }
 
-        public BankAccaunt(TypeOfBankAccaunt typeOfBank)
+
+        public decimal GetAccauntBalance
         {
-            _typeAcaunt = typeOfBank;
-            Number();
+            get
+            {
+                return Balance;
+            }
+            set
+            {
+                Balance = value;
+
+            }
         }
 
-        public BankAccaunt(decimal balance, TypeOfBankAccaunt typeAcaunt)
+
+
+        public TypeOfBankAccaunt GetTypeOfAccaunt
         {
-            Balance = balance;
-            _typeAcaunt = typeAcaunt;
-            Number();
+            get
+            {
+                return _typeAcaunt;
+            }
+            set
+            {
+                _typeAcaunt = value;
+
+            }
         }
+
 
 
         RegionInfo myRI1 = new RegionInfo("en-RU");
         public void Info()
         {
 
-            Console.WriteLine($"Номер счета: {accaunt_Number}\nТип счета: {_typeAcaunt.Description()}\n" +
-                              $"Баланс: { Balance} {myRI1.CurrencySymbol} ");
+            Console.WriteLine($"Номер счета: {accaunt_Number}\nТип счета: {GetTypeOfAccaunt.Description()}\n" +
+                              $"Баланс: { GetAccauntBalance} {myRI1.CurrencySymbol} ");
         }
     }
 
