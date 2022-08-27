@@ -56,6 +56,33 @@ namespace OOP.lesson_2
             }
         }
 
+        //ДЗ_5
+
+        public void WithDrawMoney(int name, decimal sumMoney)
+        {
+            if (name == accaunt_Number)
+            {
+                if (Balance >= sumMoney)
+                {
+                    Balance -= sumMoney;
+                    Console.WriteLine($"Со счёта №{name} снята на: {sumMoney}  Баланс: {Balance} {myRI1.CurrencySymbol}");
+                }
+                else
+                {
+                    Console.WriteLine($"На счете №{name} недостаточно денги. Баланс:{Balance} {myRI1.CurrencySymbol}  хотел снят: {sumMoney} {myRI1.CurrencySymbol}");
+                }
+            }
+
+        }
+
+        public void DepositMoney(int name, decimal sumMoney)
+        {
+            if (name == accaunt_Number)
+            {
+                Balance += sumMoney;
+                Console.WriteLine($"{sumMoney} на cчет №{name} пополнен.Текущий Баланс: {Balance} {myRI1.CurrencySymbol} ");
+            }
+        }
 
 
         RegionInfo myRI1 = new RegionInfo("en-RU");

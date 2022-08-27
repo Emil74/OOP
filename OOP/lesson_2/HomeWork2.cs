@@ -21,11 +21,20 @@ namespace OOP.lesson_2
 
             Console.WriteLine(new string('-', 50));
 
+            accaunt.WithDrawMoney(accaunt.GetAccuntNumber, 1000);
+            accaunt.DepositMoney(accaunt.GetAccuntNumber, 5000);
+            Console.WriteLine(new string('-', 50));
+
+
             BankAccaunt accaunt2 = new();
             accaunt2.GetAccauntBalance = 9000m;
             accaunt2.GetTypeOfAccaunt = TypeOfBankAccaunt.Deposit;
             accaunt2.Info();
 
+            Console.WriteLine(new string('-', 50));
+
+            accaunt2.WithDrawMoney(accaunt.GetAccuntNumber, 10000);
+           
             Console.WriteLine(new string('-', 50));
 
             BankAccaunt accaunt3 = new();
@@ -34,6 +43,9 @@ namespace OOP.lesson_2
             accaunt3.Info();
 
             Console.WriteLine(new string('-', 50));
+
+            accaunt3.WithDrawMoney(accaunt3.GetAccuntNumber, 1000);
+            accaunt3.DepositMoney(accaunt3.GetAccuntNumber, 1000);
 
         }
     }
