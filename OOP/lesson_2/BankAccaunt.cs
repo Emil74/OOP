@@ -18,23 +18,34 @@ namespace OOP.lesson_2
         {
             accaunt_Number++;
         }
-        public void AccauntBalance(decimal _balance)
+
+
+        public BankAccaunt(decimal _balance)
         {
             Balance = _balance;
+            Number();
         }
-        public void AccauntType(TypeOfBankAccaunt typeOfBankAccaunt)
+
+        public BankAccaunt(TypeOfBankAccaunt typeOfBank)
         {
-            _typeAcaunt = typeOfBankAccaunt;
+            _typeAcaunt = typeOfBank;
+            Number();
         }
+
+        public BankAccaunt(decimal balance, TypeOfBankAccaunt typeAcaunt)
+        {
+            Balance = balance;
+            _typeAcaunt = typeAcaunt;
+            Number();
+        }
+
 
         RegionInfo myRI1 = new RegionInfo("en-RU");
         public void Info()
         {
 
-
-            Console.WriteLine($"Номер счета: {accaunt_Number}\nТип счета: {/*_typeAcaunt.Description()*/_typeAcaunt}\n" +
-                              $"Баланс: {/*Balance*/ Balance} {myRI1.CurrencySymbol} ");
-
+            Console.WriteLine($"Номер счета: {accaunt_Number}\nТип счета: {_typeAcaunt.Description()}\n" +
+                              $"Баланс: { Balance} {myRI1.CurrencySymbol} ");
         }
     }
 
