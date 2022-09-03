@@ -85,16 +85,43 @@ namespace OOP.lesson_2
         }
 
 
-        RegionInfo myRI1 = new RegionInfo("en-RU");
+
+        static RegionInfo myRI1 = new RegionInfo("en-RU");
         public void Info()
         {
 
             Console.WriteLine($"Номер счета: {accaunt_Number}\nТип счета: {GetTypeOfAccaunt.Description()}\n" +
-                              $"Баланс: { GetAccauntBalance} {myRI1.CurrencySymbol} ");
+                              $"Баланс: {GetAccauntBalance} {myRI1.CurrencySymbol} ");
+        }
+
+
+
+
+        public static void DepostiMOneyNumberAccaunt(BankAccaunt numberAccaunt1, BankAccaunt numberAccaunt2,
+              decimal sum)
+        {
+            if (numberAccaunt1.GetAccauntBalance >= sum)
+            {
+                numberAccaunt1.GetAccauntBalance -= sum;
+
+                numberAccaunt2.GetAccauntBalance += sum;
+
+                Console.WriteLine(
+                    $"Баланс {numberAccaunt2.GetAccauntBalance - sum} {myRI1.CurrencySymbol} ---> {sum} {myRI1.CurrencySymbol} на cчет №{numberAccaunt2.GetAccuntNumber} пополнен." +
+                    $"Текущий Баланс: {numberAccaunt2.GetAccauntBalance} {myRI1.CurrencySymbol} ");
+            }
+            else
+            {
+                Console.WriteLine($"На счете №{numberAccaunt1.GetAccuntNumber} недостаточно денги. " +
+                    $"Баланс:{numberAccaunt1.GetAccauntBalance} {myRI1.CurrencySymbol}");
+
+                ;
+            }
+
+
+
         }
     }
-
-
     public enum TypeOfBankAccaunt
     {
         [Description("Депозит")]
