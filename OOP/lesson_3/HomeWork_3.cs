@@ -22,6 +22,9 @@ namespace OOP.lesson_3
                 case "3.2":
                     Work_3_2.Str();
                     break;
+                case "3.3":
+                    Work_3_3.Lesson_3_3();
+                    break;
                 default:
                     break;
             }
