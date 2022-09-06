@@ -1,11 +1,13 @@
 ﻿using OOP.lesson_2;
 using OOP;
 using OOP.lesson_3;
+using OOP.lesson_4;
 
 List<ILesson> task = new List<ILesson>()
             {
            new HomeWork2(),
-           new HomeWork_3()
+           new HomeWork_3(),
+           new HomeWork_4()
 };
 
 foreach (ILesson lesson in task)
