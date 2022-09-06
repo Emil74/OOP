@@ -33,6 +33,23 @@ namespace OOP.lesson_4
                     building2.Add(20, 5, 30, 1);
                     building2.Print();
                     break;
+                case "4.2":
+                    var building_1 = new Building();
+                    building_1.CreatorBuilding(150, 50, 300, 2);
+
+                    var building_2 = new Building();
+                    building_2.CreatorBuilding(20, 5, 30, 1);
+
+                    var building_3 = new Building();
+                    building_3.CreatorBuilding(70, 30, 150, 2);
+
+                    building_3.PrintBuild();
+
+                    Console.WriteLine();
+
+                    building_3.DeleteBuild(2);
+                    building_3.PrintBuild();
+                    break;
             }
         }
     }
