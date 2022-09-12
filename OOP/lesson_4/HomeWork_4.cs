@@ -16,11 +16,12 @@ namespace OOP.lesson_4
         public void Run()
         {
             Console.Write("Ввдите дз (4.1  +  4.2) --> ");
-            string str = Console.ReadLine();
+            string? str = Console.ReadLine();
 
             switch (str)
             {
                 case "4.1":
+                    #region 4.1
                     var building = new Building();
                     building.Add(150, 50, 300, 2);
                     building.Print();
@@ -32,8 +33,10 @@ namespace OOP.lesson_4
                     var building2 = new Building();
                     building2.Add(20, 5, 30, 1);
                     building2.Print();
+                    #endregion
                     break;
                 case "4.2":
+                    #region 4.2
                     var building_1 = new Building();
                     building_1.CreatorBuilding(150, 50, 300, 2);
 
@@ -49,6 +52,7 @@ namespace OOP.lesson_4
 
                     building_3.DeleteBuild(2);
                     building_3.PrintBuild();
+                    #endregion
                     break;
             }
         }
