@@ -10,9 +10,48 @@ namespace OOP.lesson_2
 {
     public class BankAccaunt
     {
-        static int accaunt_Number = 0;
-        decimal Balance;
-        TypeOfBankAccaunt _typeAcaunt;
+       public static int accaunt_Number = 0;
+       public decimal Balance;
+       public TypeOfBankAccaunt _typeAcaunt;
+
+
+        #region ДЗ_6
+        
+        public static bool operator ==(BankAccaunt accaunt1, BankAccaunt accaunt2)
+        {
+            return (accaunt1.Balance == accaunt2.Balance) && (accaunt1._typeAcaunt == accaunt2._typeAcaunt);
+
+        }
+
+        public static bool operator !=(BankAccaunt accaunt1, BankAccaunt accaunt2)
+        {
+            return !(accaunt1 == accaunt2);
+        }
+
+        public override bool Equals(object? obj)
+        {
+            if (!(obj is BankAccaunt))
+                return false;
+
+            var accaunt = (BankAccaunt)obj;
+
+            return (accaunt.Balance == this.Balance) & (accaunt._typeAcaunt == this._typeAcaunt);
+        }
+
+        public override string ToString()
+        {
+            return $"Balance: {Balance}  TypeAccaunt: {_typeAcaunt}";
+        }
+
+        public override int GetHashCode()
+        {
+            return string.Format("{0} {1}", Balance, _typeAcaunt).GetHashCode();
+        }
+
+        #endregion
+
+        #region MyRegion
+
 
         public BankAccaunt()
         {
@@ -143,5 +182,5 @@ namespace OOP.lesson_2
 
         }
     }
-
+    #endregion
 }
